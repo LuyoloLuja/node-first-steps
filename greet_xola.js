@@ -1,9 +1,7 @@
 const chalk = require('chalk');
-//import the greet module that is in the current folder
 const greet = require('./greet');
 
-const styledMessage = chalk.bgGreen.black(greet('Xola'));
-console.log(styledMessage);
+//console.log(styledMessage);
 
 // using figlet
 var figlet = require('figlet');
@@ -15,5 +13,6 @@ figlet(greet('Xola'), function(err, data) {
         console.dir(err);
         return;
     }
-    console.log(data);
+	const styledMessage = chalk.bgGreen.black(greet(data));
+    console.log(styledMessage);
 });
